@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Owin;
 using Microsoft.AspNet.Identity.EntityFramework;
 using AssessmentApp.WebClient.Models;
+using AssessmentApp.WebClient.Code;
 
 namespace AssessmentApp.WebClient
 {
@@ -22,7 +23,12 @@ namespace AssessmentApp.WebClient
             var um = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             var me = um.FindByEmail("toddhilehoffer@yahoo.com");
             if (me == null) {
-                um.Create(new ApplicationUser { Email = "toddhilehoffer@yahoo.com", EmailConfirmed = true, UserName = "toddhilehoffer@yahoo.com", PhoneNumber = "6107159128", PhoneNumberConfirmed = true }, "Korn2Bush");
+                um.Create(new ApplicationUser {
+                    Email = AppSettings.AdminUserEmail,
+                    EmailConfirmed = true,
+                    UserName = AppSettings.AdminUserEmail,
+                    PhoneNumber = AppSettings.AdminUserPhoneNumber,
+                    PhoneNumberConfirmed = true }, AppSettings.AdminUserPassword);
             }
             um.AddToRole(me.Id, "teacher");
             

@@ -298,7 +298,13 @@
 </div>
 
 @section Scripts{
-    <script type="text/javascript" src="~/Scripts/Views/Assessments/LetterRecognition.js?version=@AppSettings.Version"></script>
+    <script type="text/javascript" src="~/Scripts/TypeScript/Assessments/ScoreCard.js?vesion=@AssessmentApp.WebClient.Code.AppSettings.Version"></script>
+    <script type="text/javascript" src="~/Scripts/TypeScript/Assessments/LetterRecognition.jsvesion=@AssessmentApp.WebClient.Code.AppSettings.Version"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var lr = new App.Assessments.LetterRecognition();
+        });
+    </script>
 }
 
 

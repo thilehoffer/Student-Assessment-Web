@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindergarten Assessments</title>
+   
+    @Styles.Render("~/Content/css") 
+	<link href="@Url.Content("~/Content/kendo/2016.1.112/kendo.common-bootstrap.min.css")" rel="stylesheet" type="text/css" /> 
+	<link href="@Url.Content("~/Content/kendo/2016.1.112/kendo.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Content/kendo/2016.1.112/kendo.dataviz.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+
+    @Scripts.Render("~/bundles/all")  
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div id="shared-hidden-fields">
+        <input type="hidden" id="teacerId" value="@AssessmentApp.WebClient.SessionItems.TeacherId" />
+    </div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Classes", "Index", "Classes")</li>
+                    <li>@Html.ActionLink("Students", "Index", "Students")</li>
+                    <li>@Html.ActionLink("Assessments", "Index", "Assessments")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <h3>@ViewBag.Title</h3>
+        <hr />  
+        @RenderBody()
+        <hr />
+ 
+    </div>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿@model AssessmentApp.Data.Models.Class
+
+@{
+    ViewBag.Title = "Edit Class";
+}
+
+<div class="container">
+
+
+    @using (Html.BeginForm("Edit", "Classes", FormMethod.Post, new { role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+
+        <div class="form-group">
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+        </div>
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.TeacherId)
+
+        <div class="form-group col-sm-4">
+            @Html.LabelFor(m => m.ClassName)<br/>
+
+            @Html.TextBoxFor(m => m.ClassName, new { placeholder = "E.G. Morning Class", @class = "k-textbox" })
+        </div>
+        <div class="clearfix "></div>
+        <div class="checkbox col-sm-4"> 
+            <label>@Html.EditorFor(model => model.Active)Active</label> 
+        </div>
+        <div class="clearfix "></div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-default" value="Save" />
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+</div> 

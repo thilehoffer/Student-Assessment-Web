@@ -1,0 +1,305 @@
+﻿@model AssessmentApp.Data.Models.Assessments.LetterRecognition.Assessment
+@using AssessmentApp.WebClient.Code;
+@{
+    ViewBag.Title = $"{@Model.StudentAssessment.AssessmentTypeName} for {@Model.StudentAssessment.StudentName}";
+}
+
+<style type="text/css">
+    table.letter-recogniziton td {
+        padding: 5px;
+    }
+
+    table.letter-recogniziton .answer-container {
+        border-style: solid;
+        border-width: 2px;
+        min-height: 110px;
+        min-width: 110px;
+        padding-top: 2px;
+        text-align: center;
+        cursor: pointer;
+        font-size: xx-large;
+    }
+
+        table.letter-recogniziton .answer-container span {
+            font-weight: bold;
+        }
+
+        table.letter-recogniziton .answer-container input {
+            max-width: 40px;
+            text-align: center;
+            margin-top: 2px;
+        }
+
+
+    #right-side-container {
+        margin-top: 8px;
+    }
+
+    .correct {
+        border-color: green;
+    }
+
+        .correct span {
+            color: green;
+        }
+
+    .incorrect {
+        border-color: red;
+    }
+
+        .incorrect span {
+            color: red;
+        }
+</style>
+
+<div class="container">
+    @using (Html.BeginForm("LetterRecognition", "Assessments", FormMethod.Post, new { role = "form" }))
+    {
+
+        <div class="row">
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-horizontal">
+
+            @Html.HiddenFor(m => m.AssessmentData.IsUpperCase)
+            @Html.HiddenFor(m => m.StudentAssessment.Id)
+            @Html.HiddenFor(m => m.StudentAssessment.StudentId)
+            @Html.HiddenFor(m => m.StudentAssessment.AssessmentTypeId)
+            @Html.HiddenFor(m => m.StudentAssessment.AssessmentTypeName)
+            @Html.HiddenFor(m => m.StudentAssessment.StudentName)
+
+            <div id="assessment-container" class="row">
+                <div class="col-sm-6">
+                    <table class="letter-recogniziton">
+                        <tr>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.A.Answer, new { @class = "answer" })
+                                    <span class="letter">A</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.A.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.B.Answer, new { @class = "answer" })
+                                    <span class="letter">B</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.B.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.C.Answer, new { @class = "answer" })
+                                    <span class="letter">C</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.C.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.D.Answer, new { @class = "answer" })
+                                    <span class="letter">D</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.D.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.E.Answer, new { @class = "answer" })
+                                    <span class="letter">E</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.E.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.F.Answer, new { @class = "answer" })
+                                    <span class="letter">F</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.F.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.G.Answer, new { @class = "answer" })
+                                    <span class="letter">G</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.G.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.H.Answer, new { @class = "answer" })
+                                    <span class="letter">H</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.H.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.I.Answer, new { @class = "answer" })
+                                    <span class="letter">I</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.I.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.J.Answer, new { @class = "answer" })
+                                    <span class="letter">J</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.J.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.K.Answer, new { @class = "answer" })
+                                    <span class="letter">K</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.K.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.L.Answer, new { @class = "answer" })
+                                    <span class="letter">L</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.L.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.M.Answer, new { @class = "answer" })
+                                    <span class="letter">M</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.M.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.N.Answer, new { @class = "answer" })
+                                    <span class="letter">N</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.N.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.O.Answer, new { @class = "answer" })
+                                    <span class="letter">O</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.O.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.P.Answer, new { @class = "answer" })
+                                    <span class="letter">P</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.P.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.Q.Answer, new { @class = "answer" })
+                                    <span class="letter">Q</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.Q.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.R.Answer, new { @class = "answer" })
+                                    <span class="letter">R</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.R.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.S.Answer, new { @class = "answer" })
+                                    <span class="letter">S</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.S.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.T.Answer, new { @class = "answer" })
+                                    <span class="letter">T</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.T.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.U.Answer, new { @class = "answer" })
+                                    <span class="letter">U</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.U.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.V.Answer, new { @class = "answer" })
+                                    <span class="letter">V</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.V.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.W.Answer, new { @class = "answer" })
+                                    <span class="letter">W</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.W.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.X.Answer, new { @class = "answer" })
+                                    <span class="letter">X</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.X.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.Y.Answer, new { @class = "answer" })
+                                    <span class="letter">Y</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.Y.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td>
+                                <div class="answer-container">
+                                    @Html.HiddenFor(m => m.AssessmentData.Z.Answer, new { @class = "answer" })
+                                    <span class="letter">Z</span><br />
+                                    @Html.TextBoxFor(m => m.AssessmentData.Z.InncorrectGuess, new { @class = "incorrect-input", maxlength = "1" })
+                                </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col-sm-6">
+                    <div id="right-side-container">
+                        <input type="submit" id="markAllCorrect" class="btn btn-default" value="All Correct" /> &nbsp;&nbsp;
+                        <input type="submit" id="markAllIncorrect" class="btn btn-default" value="All Incorrect" />
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-sm-2">
+            <br />
+            <input type="submit" class="btn btn-default" value="Save Assessment" />
+        </div>
+        <div class="col-sm-4 score">
+            <br/>
+            <p>Score: <span id="scoreCount"></span> out of: <span id="totalCount"></span></p>
+        </div>
+    }
+</div>
+
+@section Scripts{
+    <script type="text/javascript" src="~/Scripts/Views/Assessments/LetterRecognition.js?version=@AppSettings.Version"></script>
+}
+
+
+

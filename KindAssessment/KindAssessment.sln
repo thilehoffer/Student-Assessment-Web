@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssessmentApp.WebClient", "KindAssessment\AssessmentApp.WebClient.csproj", "{475CAA92-3C12-4CBC-8F56-8929AD923821}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssessmentApp.Data", "KindAssessment.DataRepository\AssessmentApp.Data.csproj", "{9E9AC25E-69C8-4C10-9A0D-C0216AB5B2D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssessmentApp.Tests", "AssessmentApp.Tests\AssessmentApp.Tests.csproj", "{599EA2BA-D8F0-40ED-8015-E513E70FE4E3}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AssementApp.Database", "AssementApp.Database\AssementApp.Database.sqlproj", "{EA71692F-F87F-42E8-B44E-02BA9CADDCDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{475CAA92-3C12-4CBC-8F56-8929AD923821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{475CAA92-3C12-4CBC-8F56-8929AD923821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{475CAA92-3C12-4CBC-8F56-8929AD923821}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{475CAA92-3C12-4CBC-8F56-8929AD923821}.Debug|x86.Build.0 = Debug|Any CPU
+		{475CAA92-3C12-4CBC-8F56-8929AD923821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{475CAA92-3C12-4CBC-8F56-8929AD923821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{475CAA92-3C12-4CBC-8F56-8929AD923821}.Release|x86.ActiveCfg = Release|Any CPU
+		{475CAA92-3C12-4CBC-8F56-8929AD923821}.Release|x86.Build.0 = Release|Any CPU
+		{9E9AC25E-69C8-4C10-9A0D-C0216AB5B2D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E9AC25E-69C8-4C10-9A0D-C0216AB5B2D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E9AC25E-69C8-4C10-9A0D-C0216AB5B2D6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9E9AC25E-69C8-4C10-9A0D-C0216AB5B2D6}.Debug|x86.Build.0 = Debug|Any CPU
+		{9E9AC25E-69C8-4C10-9A0D-C0216AB5B2D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E9AC25E-69C8-4C10-9A0D-C0216AB5B2D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E9AC25E-69C8-4C10-9A0D-C0216AB5B2D6}.Release|x86.ActiveCfg = Release|Any CPU
+		{9E9AC25E-69C8-4C10-9A0D-C0216AB5B2D6}.Release|x86.Build.0 = Release|Any CPU
+		{599EA2BA-D8F0-40ED-8015-E513E70FE4E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{599EA2BA-D8F0-40ED-8015-E513E70FE4E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{599EA2BA-D8F0-40ED-8015-E513E70FE4E3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{599EA2BA-D8F0-40ED-8015-E513E70FE4E3}.Debug|x86.Build.0 = Debug|Any CPU
+		{599EA2BA-D8F0-40ED-8015-E513E70FE4E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{599EA2BA-D8F0-40ED-8015-E513E70FE4E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{599EA2BA-D8F0-40ED-8015-E513E70FE4E3}.Release|x86.ActiveCfg = Release|x86
+		{599EA2BA-D8F0-40ED-8015-E513E70FE4E3}.Release|x86.Build.0 = Release|x86
+		{EA71692F-F87F-42E8-B44E-02BA9CADDCDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA71692F-F87F-42E8-B44E-02BA9CADDCDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA71692F-F87F-42E8-B44E-02BA9CADDCDC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EA71692F-F87F-42E8-B44E-02BA9CADDCDC}.Debug|x86.Build.0 = Debug|Any CPU
+		{EA71692F-F87F-42E8-B44E-02BA9CADDCDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA71692F-F87F-42E8-B44E-02BA9CADDCDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA71692F-F87F-42E8-B44E-02BA9CADDCDC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EA71692F-F87F-42E8-B44E-02BA9CADDCDC}.Release|x86.ActiveCfg = Release|Any CPU
+		{EA71692F-F87F-42E8-B44E-02BA9CADDCDC}.Release|x86.Build.0 = Release|Any CPU
+		{EA71692F-F87F-42E8-B44E-02BA9CADDCDC}.Release|x86.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://toddhilehoffer.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = KindAssessment.DataRepository\\AssessmentApp.Data.csproj
+		SccProjectName1 = KindAssessment.DataRepository
+		SccLocalPath1 = KindAssessment.DataRepository
+		SccProjectUniqueName2 = KindAssessment\\AssessmentApp.WebClient.csproj
+		SccProjectName2 = KindAssessment
+		SccLocalPath2 = KindAssessment
+		SccProjectUniqueName3 = AssessmentApp.Tests\\AssessmentApp.Tests.csproj
+		SccProjectName3 = AssessmentApp.Tests
+		SccLocalPath3 = AssessmentApp.Tests
+		SccProjectUniqueName4 = AssementApp.Database\\AssementApp.Database.sqlproj
+		SccProjectName4 = AssementApp.Database
+		SccLocalPath4 = AssementApp.Database
+	EndGlobalSection
+EndGlobal

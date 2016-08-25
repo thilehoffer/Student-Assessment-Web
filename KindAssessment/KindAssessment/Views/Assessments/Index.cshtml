@@ -1,0 +1,28 @@
+﻿@model List<AssessmentApp.Data.Models.RecentAssessmentGridItem> 
+@{
+    ViewBag.Title = "Recent Assessments";
+}
+
+ <div class="col-sm-12" style="padding-top:5px; padding-bottom:5px;">
+    @(Html.Kendo().Grid(Model)
+            .Name("grid")
+            .Columns(columns =>
+            {
+                columns.Bound(p => p.Updated).Title("Updated").ClientTemplate("#:UpdatedString#");
+                columns.Bound(p => p.StudentName).Title("Student Name");
+                columns.Bound(p => p.Assessment).Title("Assessment");
+                columns.Bound(p => p.Id).Title("").ClientTemplate($"<a href='{Url.Action("Edit")}/#:Id#'>Edit</a>").Sortable(false);
+            })
+        .Selectable(s => s.Enabled(false))
+        .Sortable()
+        .DataSource(dataSource => dataSource.Ajax().ServerOperation(false))
+    )
+     <br/>
+</div>
+<div class="clearfix visible-xs"></div>
+
+<div class="col-sm-12">
+    <br />
+    @Html.ActionLink("Add new Assessment", "Add")
+</div>
+

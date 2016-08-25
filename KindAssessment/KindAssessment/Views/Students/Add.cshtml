@@ -1,0 +1,47 @@
+﻿
+@model AssessmentApp.WebClient.Models.AddStudentViewModel
+<div class="container">
+    @using (Html.BeginForm("Add", "Students", FormMethod.Post, new { role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group col-sm-4">
+            @Html.LabelFor(m => m.Student.ClassId)<br />
+            @(Html.Kendo()
+            .ComboBoxFor(m => m.Student.ClassId)
+            .Filter("contains")
+            .IgnoreCase(true)
+            .Suggest(true)
+            .DataTextField("Text")
+            .DataValueField("Value")
+            .BindTo(@Model.Classes)
+            .HtmlAttributes(new { style = "width:100%" })
+            )
+        </div>
+        <div class="clearfix "></div>
+        <div class="form-group col-sm-4">
+            @Html.LabelFor(m => m.Student.StudentName)<br/>
+            @Html.TextBoxFor(m => m.Student.StudentName, new { @class = "k-textbox" })
+        </div>
+        <div class="clearfix "></div>
+        <div class="form-group col-sm-4">
+            @Html.LabelFor(m => m.Student.StudentDateOfBirth)<br />
+            @Html.Kendo().DatePickerFor(m => m.Student.StudentDateOfBirth)
+        </div>
+        <div class="clearfix "></div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-default" value="Add Student" />
+        </div>
+
+    }
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+ 
+
+
+
